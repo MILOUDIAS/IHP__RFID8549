@@ -1,8 +1,6 @@
-ANIMALS LF RFID Tag
+# Project: IHP_RFID8549
 
-Project: IHP_RFID8549
-
-Overview
+## Overview
 
 The "RFID8549" is a mixed-signal low-frequency (LF) passive RFID tag SoC designed for animal identification.
 The system integrates:
@@ -13,7 +11,7 @@ _ SPI Design-for-Test (DFT) interface
 
 This document describes the current pre-silicon implementation and simulation characterization.
 
-Key Features
+## Key Features
 
 - 128-bit FDX-B frame generation
 - Internal ROM-based ID storage
@@ -23,7 +21,7 @@ Key Features
 - SPI DFT support (chip ID read, ROM test, scan control)
 - RTL and gate-level simulation verified
 
-Operating Frequency
+### Operating Frequency
 
 | Parameter           | Value                          |
 | ------------------- | ------------------------------ |
@@ -33,23 +31,26 @@ Operating Frequency
 | Verification clock  | \~134.2 kHz (`clk_AFE`)        |
 | Bit timing          | `BIT_PERIOD = 32` clock cycles |
 
-Functional Description
+## Functional Description
 
-1- Normal Operation
+### 1- Normal Operation
+
 . The AFE extracts power from the RF field.  
 . The AFE generates:`clk_AFE`,`reset_n_AFE` and `power_stable`.
 . The digital core reads the 128-bit frame from ROM.  
 . The frame is serialized and bi-phase encoded.
 . Output transmitted on `modulated_bit`.
 
-2- DFT / Test Operation
-SPI interface supports:
+### 2- DFT / Test Operation
+
+#### SPI interface supports
+
 . Chip-ID read
 . ROM test read
 . Scan shift / capture
 . Test reset control
 
-Frame Structure
+#### Frame Structure
 
 The tag generates a fixed 128-bit FDX-B frame stored in internal ROM
 . Header
@@ -57,7 +58,7 @@ The tag generates a fixed 128-bit FDX-B frame stored in internal ROM
 . CRC-16
 . Trailer
 
-Chip Pin-Out (Digital part)
+## Chip Pin-Out (Digital part)
 
 | Pin Name      | IO  | Function                                         |
 | :------------ | :-- | :----------------------------------------------- |
@@ -70,7 +71,7 @@ Chip Pin-Out (Digital part)
 | mosi          | I   | SPI Data Input.                                  |
 | miso_o        | O   | SPI Data Output.                                 |
 
-Verification Status
+## Verification Status
 
 The design has been verified using:
 
@@ -79,9 +80,10 @@ The design has been verified using:
 - Cocotb testbench (Functional + Coverage)
 - Formal assertions (RTL level)
 
-Project Status
+# Project Status
 
 - RTL completed
-- Digital verification completed
-- Pre-silicon mixed-signal integration
-- Preliminary datasheet release
+- Digital verification completed.
+- Analog Blocks completed.
+- Pre-silicon mixed-signal integration.
+- Preliminary datasheet release.
