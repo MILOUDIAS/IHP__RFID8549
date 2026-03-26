@@ -46,8 +46,8 @@ This document describes the current pre-silicon implementation and simulation ch
 #### SPI interface supports
 
 . Chip-ID read
-. ROM test read
-. Scan shift / capture
+. ROM direct access/sweaep testing
+. Scan chain testing (shift and capture)
 . Test reset control
 
 #### Frame Structure
@@ -69,21 +69,13 @@ The tag generates a fixed 128-bit FDX-B frame stored in internal ROM
 | spi_sck       | I   | SPI Clock for Test mode.                         |
 | cs_n          | I   | SPI Chip Select.                                 |
 | mosi          | I   | SPI Data Input.                                  |
-| miso_o        | O   | SPI Data Output.                                 |
+| miso          | O   | SPI Data Output.                                 |
 
 ## Verification Status
 
-The design has been verified using:
 
-- RTL simulation (Functional)
-- Gate-level simulation (GLS)
+- RTL simulation with cocotb + verilator 
+- Gate-level simulation (GLS) with cocotb + iverilog
 - Cocotb testbench (Functional + Coverage)
 - Formal assertions (RTL level)
 
-# Project Status
-
-- RTL completed
-- Digital verification completed.
-- Analog Blocks completed.
-- Pre-silicon mixed-signal integration.
-- Preliminary datasheet release.

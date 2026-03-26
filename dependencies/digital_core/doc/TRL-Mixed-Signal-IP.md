@@ -24,7 +24,7 @@ have a short overview of IP in terms of its maturity.
 
 ## TRL3 - Proof of concept at schematic level
 
-- [ ] Are the IP schematics available at transistor level (analog parts) and gate level (digital parts)?
+- [x] Are the IP schematics available at transistor level (analog parts) and gate level (digital parts)?
 - [ ] Are all dependencies of the IP schematics on logic libraries declared?
 - [ ] Are the analog IP ports fully specified at electrical level?
 - [ ] Are the digital IP ports fully specified at logical level (e.g. protocols)?
