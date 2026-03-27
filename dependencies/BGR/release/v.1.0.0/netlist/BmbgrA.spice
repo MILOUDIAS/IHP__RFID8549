@@ -1,0 +1,162 @@
+** sch_path: /foss/designs/layout/BmbgrFinal.sch
+.subckt BmbgrFinal vdd vout vbias vss vref
+*.PININFO vdd:B vref:O vin1:I vin2:I vout:B vdd:B well3:B vbias:O
+MM4 vin2 vout vdd well4 sg13_hv_pmos w=2.5u l=2u ng=1 m=2
+MM5 vin1 vout vdd well4 sg13_hv_pmos w=2.5u l=2u ng=1 m=2
+MM7 vin2 vin2 vss sub! sg13_hv_nmos w=7u l=0.5u ng=1
+MM8 vref vout vdd well4 sg13_hv_pmos w=2.5u l=2u ng=1 m=2
+C2 vout vss cap_cmim w=31.81e-6 l=31.81e-6 m=2
+MM3 dn1 vbias vss sub! sg13_hv_nmos w=10u l=1u ng=1
+MM1 dn2 dn2 vdd well3 sg13_hv_pmos w=10u l=4u ng=1 m=4
+MM2 dn2 vin1 dn1 sub! sg13_hv_nmos w=10u l=4u ng=1 m=4
+MM14 vout vin2 dn1 sub! sg13_hv_nmos w=10u l=4u ng=1 m=4
+MM15 vout dn2 vdd well3 sg13_hv_pmos w=10u l=4u ng=1 m=4
+MM16 vout vss vss sub! sg13_hv_nmos w=10u l=4u ng=1 m=4
+MM17 dn2 vss vss sub! sg13_hv_nmos w=10u l=4u ng=1 m=4
+MM18 dn2 vdd vdd well3 sg13_hv_pmos w=10u l=4u ng=1 m=4
+MM19 vout vdd vdd well3 sg13_hv_pmos w=10u l=4u ng=1 m=4
+MM20 vss vss vss sub! sg13_hv_nmos w=10u l=1u ng=1
+MM21 dn1 vss vss sub! sg13_hv_nmos w=10u l=1u ng=1
+R118 vdd well3 ntap1 A=4.254e-11 P=0.0002836
+MM22 vbias vbias net1 sub! sg13_hv_nmos w=10u l=1u ng=1 m=4
+MM23 vn vn vss sub! sg13_hv_nmos w=10u l=1u ng=1
+MM24 vbias vp vdd well sg13_hv_pmos w=5u l=1u ng=1 m=2
+MM25 vn vp vdd well sg13_hv_pmos w=5u l=1u ng=1 m=2
+C3 vdd vp cap_cmim w=18.2e-6 l=18.2e-6
+C4 vn vss cap_cmim w=9.97e-6 l=9.97e-6 m=2
+RR119 net1 net2 5.025k $SUB=sub! $[rppd] w=2e-6 l=38.5e-6 b=0
+R120 vdd well ntap1 A=1.584e-11 P=0.0001056
+MM26 vn vdd vdd well sg13_hv_pmos w=5u l=1u ng=1 m=2
+MM27 vbias vdd vdd well sg13_hv_pmos w=5u l=1u ng=1 m=2
+RR124 net2 vss 5.025k $SUB=sub! $[rppd] w=2e-6 l=38.5e-6 b=0
+MM28 vp c vdd well1 sg13_hv_pmos w=10u l=2u ng=1 m=2
+MM29 c c vdd well1 sg13_hv_pmos w=10u l=2u ng=1 m=2
+MM30 vp vn vss sub! sg13_hv_nmos w=10u l=2u ng=1 m=2
+MM31 c vbias vss sub! sg13_hv_nmos w=10u l=2u ng=1 m=2
+R125 vdd well1 ntap1 A=2.484e-11 P=0.0001656
+MM32 vp vss vss sub! sg13_hv_nmos w=10u l=2u ng=1 m=2
+MM33 c vss vss sub! sg13_hv_nmos w=10u l=2u ng=1 m=2
+MM34 c vdd vdd well1 sg13_hv_pmos w=10u l=2u ng=1 m=2
+MM35 vp vdd vdd well1 sg13_hv_pmos w=10u l=2u ng=1 m=2
+R128 vdd well2 ntap1 A=1.044e-11 P=6.96e-05
+MM36 vp net3 vss sub! sg13_hv_nmos w=0.3u l=3u ng=1
+MM37 net3 vn vss sub! sg13_hv_nmos w=0.3u l=3u ng=1
+MM38 net3 vn net4 well2 sg13_hv_pmos w=1u l=3u ng=1
+MM39 net4 net4 net5 well2 sg13_hv_pmos w=1u l=3u ng=1
+MM40 net5 net5 vdd well2 sg13_hv_pmos w=1u l=3u ng=1
+R52 vss sub! ptap1 A=39.3432e-11 P=0.00262288
+MM10 vin2 vss vss sub! sg13_hv_nmos w=7u l=0.5u ng=1
+MM42 vref vdd vdd well4 sg13_hv_pmos w=2.5u l=2u ng=1 m=2
+R116 vdd well4 ntap1 A=1.944e-11 P=0.0001296
+MM43 vin1 vdd vdd well4 sg13_hv_pmos w=2.5u l=2u ng=1 m=4
+RR117 vss vss 2.506k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0 m=2
+MM46 vin2 vdd vdd well4 sg13_hv_pmos w=2.5u l=2u ng=1 m=2
+RR8 vref net43 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR17 net43 net6 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR18 net6 net7 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR19 net7 net8 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR20 net8 net9 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR21 net9 net10 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR22 net10 net11 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR23 net11 net12 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR24 net12 net13 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR25 net13 net23 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR26 net23 net47 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR27 net47 net14 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR29 net14 net15 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR30 net15 net16 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR31 net16 net17 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR32 net17 net18 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR33 net18 net19 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR34 net19 net20 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR35 net20 net21 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR36 net21 net22 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR37 net22 net40 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR38 net40 net41 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR39 net41 net24 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR40 net24 net25 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR41 net25 net26 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR42 net26 net27 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR43 net27 net28 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR44 net28 net29 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR45 net29 net30 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR46 net30 net31 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR47 net31 net39 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR48 net39 net42 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR49 net42 net32 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR51 net32 net33 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR53 net33 net34 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR66 net34 net35 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR67 net35 net36 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR68 net36 net37 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR69 net37 net38 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR70 net38 net44 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR71 net44 net45 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR72 net45 net48 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR73 net48 net46 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR77 net46 vss 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR1 vin1 net49 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR3 net49 net50 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR4 net50 net51 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR28 net51 net52 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR50 net52 net53 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR56 net53 net54 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR83 net54 net55 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR121 net55 net56 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR122 net56 net57 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR123 net57 net67 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR126 net67 net103 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR127 net103 net58 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR130 net58 net59 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR131 net59 net60 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR132 net60 net61 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR133 net61 net62 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR134 net62 net63 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR135 net63 net64 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR136 net64 net65 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR137 net65 net66 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR138 net66 net68 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR139 net68 net109 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR140 net108 net107 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR141 net107 net69 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR142 net69 net105 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR143 net106 net70 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR144 net70 net71 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR145 net71 net82 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR146 net82 net81 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR147 net81 net72 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR149 net72 net73 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR150 net73 net74 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR151 net74 net75 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR152 net75 net76 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR153 net76 net77 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR154 net77 net78 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR155 net78 net79 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR156 net79 net80 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR157 net80 net100 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR158 net100 net101 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR159 net101 net83 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR160 net83 net84 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR161 net84 net85 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR162 net85 net86 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR163 net86 net87 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR164 net87 net88 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR165 net88 net89 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR166 net89 net90 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR167 net90 net99 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR168 net99 net102 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR169 net102 net104 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR170 net91 net92 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR171 net92 net93 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR172 net93 net94 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR173 net94 net95 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR174 net95 net96 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR175 net96 net97 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR176 net97 net98 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR177 net98 vss 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR178 net104 net91 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR179 net105 net106 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+RR180 vin1 net108 5.0121k $SUB=sub! $[rppd] w=2e-6 l=38.4e-6 b=0
+MM9 net109 net109 vss sub! sg13_hv_nmos w=7u l=0.5u ng=1 m=8
+MM11 net109 vss vss sub! sg13_hv_nmos w=7u l=0.5u ng=1 m=11
+.ends
